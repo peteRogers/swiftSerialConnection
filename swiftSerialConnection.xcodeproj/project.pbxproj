@@ -14,6 +14,8 @@
 		2F0F62192B612B13008B0102 /* swiftSerialConnection.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2F0F62172B612B13008B0102 /* swiftSerialConnection.xcdatamodeld */; };
 		2F0F621B2B612B15008B0102 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F0F621A2B612B15008B0102 /* Assets.xcassets */; };
 		2F0F621E2B612B15008B0102 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F0F621C2B612B15008B0102 /* LaunchScreen.storyboard */; };
+		2F0F62272B612BAA008B0102 /* SerialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0F62262B612BAA008B0102 /* SerialController.swift */; };
+		2F0F622A2B612C32008B0102 /* ORSSerial in Frameworks */ = {isa = PBXBuildFile; productRef = 2F0F62292B612C32008B0102 /* ORSSerial */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		2F0F621A2B612B15008B0102 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F0F621D2B612B15008B0102 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F0F621F2B612B15008B0102 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F0F62252B612B25008B0102 /* swiftSerialConnection.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = swiftSerialConnection.entitlements; sourceTree = "<group>"; };
+		2F0F62262B612BAA008B0102 /* SerialController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F0F622A2B612C32008B0102 /* ORSSerial in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,9 +63,11 @@
 		2F0F620D2B612B13008B0102 /* swiftSerialConnection */ = {
 			isa = PBXGroup;
 			children = (
+				2F0F62252B612B25008B0102 /* swiftSerialConnection.entitlements */,
 				2F0F620E2B612B13008B0102 /* AppDelegate.swift */,
 				2F0F62102B612B13008B0102 /* SceneDelegate.swift */,
 				2F0F62122B612B13008B0102 /* ViewController.swift */,
+				2F0F62262B612BAA008B0102 /* SerialController.swift */,
 				2F0F62142B612B13008B0102 /* Main.storyboard */,
 				2F0F621A2B612B15008B0102 /* Assets.xcassets */,
 				2F0F621C2B612B15008B0102 /* LaunchScreen.storyboard */,
@@ -86,6 +93,9 @@
 			dependencies = (
 			);
 			name = swiftSerialConnection;
+			packageProductDependencies = (
+				2F0F62292B612C32008B0102 /* ORSSerial */,
+			);
 			productName = swiftSerialConnection;
 			productReference = 2F0F620B2B612B13008B0102 /* swiftSerialConnection.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +124,9 @@
 				Base,
 			);
 			mainGroup = 2F0F62022B612B13008B0102;
+			packageReferences = (
+				2F0F62282B612C32008B0102 /* XCRemoteSwiftPackageReference "ORSSerialPort" */,
+			);
 			productRefGroup = 2F0F620C2B612B13008B0102 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -141,6 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F0F62272B612BAA008B0102 /* SerialController.swift in Sources */,
 				2F0F62132B612B13008B0102 /* ViewController.swift in Sources */,
 				2F0F620F2B612B13008B0102 /* AppDelegate.swift in Sources */,
 				2F0F62112B612B13008B0102 /* SceneDelegate.swift in Sources */,
@@ -294,6 +308,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = swiftSerialConnection/swiftSerialConnection.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4NY9EY68HK;
@@ -304,6 +319,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -311,9 +327,11 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = pr.swiftSerialConnection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Debug;
 		};
@@ -322,6 +340,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = swiftSerialConnection/swiftSerialConnection.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4NY9EY68HK;
@@ -332,6 +351,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -339,9 +359,11 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = pr.swiftSerialConnection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Release;
 		};
@@ -367,6 +389,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2F0F62282B612C32008B0102 /* XCRemoteSwiftPackageReference "ORSSerialPort" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/armadsen/ORSSerialPort";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2F0F62292B612C32008B0102 /* ORSSerial */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2F0F62282B612C32008B0102 /* XCRemoteSwiftPackageReference "ORSSerialPort" */;
+			productName = ORSSerial;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		2F0F62172B612B13008B0102 /* swiftSerialConnection.xcdatamodeld */ = {
